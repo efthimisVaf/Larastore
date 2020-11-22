@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('word');
+            $table->string('name');
             $table->string('description');
             $table->double("price");
             $table->foreignId('vat_tariff_id');
