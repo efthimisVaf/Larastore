@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::with('VatTariff','Category')->get();
+        return Category::get();
     }
 
     /**
@@ -35,30 +35,29 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        return Product::create($request->all());
-
+        return Category::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $product = Product::with('VatTariff','Category')->whereId($id)->firstOrFail();
+        $category = Category::whereId($id)->firstOrFail();
 
-        return response($product,200);
+        return response($category,200);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
         //
     }
@@ -67,28 +66,22 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $product = Product::findOrFail($id);
-        $product->update($request->all());
-
-        return $product;
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
+    public function destroy($id)
     {
-        $product= Product::findOrFail($id);
-        $product->delete();
-
-        return 204;
+        //
     }
 }

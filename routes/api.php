@@ -5,6 +5,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +20,13 @@ use App\Http\Controllers\ProductController;
 
 Route::get('products', [ProductController::class, 'index']);
 Route::delete('products/{id}', [ProductController::class, 'destroy']);
-Route::get('products/{product}', [ProductController::class, 'show']);
+Route::get('products/{id}', [ProductController::class, 'show']);
 Route::post('products', [ProductController::class, 'store']);
 Route::put('products/{id}', [ProductController::class, 'update']);
 
 Route::get('vat', [VatTariffController::class, 'index']);
-Route::delete('vat/{id}', [VatTariffController::class, 'destroy']);
-Route::get('vat/{tariff}', [VatTariffController::class, 'show']);
-Route::post('vat', [VatTariffController::class, 'store']);
-Route::put('vat/{id}', [VatTariffController::class, 'update']);
+Route::get('vat/{id}', [VatTariffController::class, 'show']);
 
+Route::get('category', [CategoryController::class, 'index']);
+Route::post('category', [CategoryController::class, 'store']);
+Route::get('category/{id}', [CategoryController::class, 'show']);
