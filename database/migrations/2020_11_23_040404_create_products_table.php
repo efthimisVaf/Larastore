@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->double("price");
-            $table->foreignId('vat_tariff_id');
+            $table->foreignId('vat_tariff_id')->references('id')->on('vat_tariffs');
         });
     }
 
