@@ -12,7 +12,7 @@ class VatTariff extends Model
     protected $hidden = ['created_at','updated_at'];
 
     public function products(){
-        return $this->hasMany(Product);
+        return $this->hasMany('App\Models\Product');
     }
 
 }

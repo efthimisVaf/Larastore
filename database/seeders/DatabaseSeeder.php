@@ -15,8 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create();
+        VatTariff::create(['Tariff' => 'LOW']);
+        VatTariff::create(['Tariff' => 'HIGH']);
 
+        $faker = \Faker\Factory::create();
 
         for ($i = 0; $i < 50; $i++) {
             Product::create([
@@ -28,7 +30,6 @@ class DatabaseSeeder extends Seeder
         }
 
 
-        VatTariff::create(['Tariff' => 'LOW']);
-        VatTariff::create(['Tariff' => 'HIGH']);
+
     }
 }

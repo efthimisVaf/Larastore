@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::all();
+        return Product::with('VatTariff')->get();
     }
 
     /**
@@ -45,9 +45,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        return $product;
+        $product = Product::with('VatTariff')->whereId($id)->firstOrFail();
+
+        return response($product,200);
     }
 
     /**

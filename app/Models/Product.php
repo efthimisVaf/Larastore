@@ -11,7 +11,13 @@ class Product extends Model
 
     protected $fillable = ['name', 'description','price','vat_tariff_id'];
 
-    protected $hidden = ['created_at','updated_at'];
+    protected $hidden = ['created_at','updated_at','vat_tariff_id'];
+
+
+    public function VatTariff()
+    {
+        return $this->belongsTo('App\Models\VatTariff');
+    }
 
 
 }
