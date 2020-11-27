@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVatTariffsTable extends Migration
+class CrateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateVatTariffsTable extends Migration
      */
     public function up()
     {
-        Schema::create('vat_tariffs', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('tariff');
+            $table->string('category_name');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateVatTariffsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vat_tariffs');
+        //
     }
 }
