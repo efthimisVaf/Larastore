@@ -22,9 +22,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public static function create()
     {
-        //
+        $category = new Category();
+        return view('pages.create_category', compact('category'));
     }
 
     /**

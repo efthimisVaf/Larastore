@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class,'welcome']);
 
 Route::get('/documentation', [PagesController::class,'documentation']);
+
+Route::get('/create_category', [PagesController::class,'createCategory']);

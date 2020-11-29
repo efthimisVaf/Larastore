@@ -17,4 +17,10 @@ class Category extends Model
         return $this->hasMany('App\Models\Product');
     }
 
+    public function setName($value){
+         $this->attributes['category_name'] = $value;
+    }
+
+
+
 }

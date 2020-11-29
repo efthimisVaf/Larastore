@@ -14,5 +14,14 @@ class PagesController extends Controller
     public function documentation(){
         return view('pages.documentation');
     }
+
+    public function createCategory(){
+        return CategoryController::create();
+    }
+
+    public function createProduct(){
+
+    }
+
 }
 

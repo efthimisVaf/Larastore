@@ -21,6 +21,7 @@
         body {
             padding-top: 5rem;
         }
+
         .starter-template {
             padding: 3rem 1.5rem;
             text-align: center;
@@ -31,13 +32,11 @@
 <body class="antialiased">
 
 
-        @include('layouts.navbar')
+@include('layouts.navbar')
 
-        <main role="main" class="starter-template">
-
-            @yield('content')
-
-        </main>
+<main role="main" class="starter-template">
+    @yield('content')
+</main>
 
 
 </body>
