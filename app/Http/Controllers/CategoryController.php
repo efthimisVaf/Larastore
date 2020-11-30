@@ -76,11 +76,18 @@ class CategoryController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public static function edit($id)
+    {
+        $category = Category::whereId($id)->firstOrfail();
+        error_log(implode(' ', $category->getFillable()));
+        error_log($category->category_name);
+        return view('pages.editCategory')->with('category', $category);
+    }
+
+    public function updateFromForm(Request $request, $id)
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *

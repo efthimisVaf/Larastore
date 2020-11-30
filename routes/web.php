@@ -21,4 +21,14 @@ Route::get('/documentation', [PagesController::class,'documentation']);
 
 Route::get('/create_category', [PagesController::class,'createCategory']);
 
+Route::get('/editCategory/{id}', [PagesController::class,'editCategory']);
+
+Route::delete('/deleteCatWithUi/{id}', [PagesController::class,'deleteFromUi']);
+
+
+
+
+
 Route::post('/create_category/save', [CategoryController::class,'storeFromForm']);
+
+Route::patch('/updateCatWithUi/{id}', [PagesController::class,'updateWithUi']);

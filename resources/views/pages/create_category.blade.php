@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
     <div class="row justify-content-center">
         <div class="col-12">
             <h1>Create a Category</h1>
@@ -14,7 +12,7 @@
                 @csrf
                 @foreach($category->getFillable() as $fillable)
                     <div class="form-group">
-                        <label for="exampleInputPassword1">{{$fillable}}</label>
+                        <label>{{$fillable}}</label>
                         <input name={{$fillable}} type="text" class="form-control" id="exampleInputPassword1"
                                placeholder="{{$fillable}}">
                     </div>
@@ -29,11 +27,15 @@
             <thead class="thead-dark">
             <th scope="col">id</th>
             <th scope="col">Category Name</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
             </thead>
             @foreach($categories as $cat)
                 <tr>
                     <th>{{$cat->id}}</th>
                     <th>{{$cat->category_name}}</th>
+                    <th><form action="/editCategory/{{$cat->id}}"><button class="btn btn-outline-dark btn-sm">Edit</button></form></th>
+                    <th><form action="/deleteCatWithUi/{{$cat->id}}" method="post">@csrf @method('DELETE')<button type="submit" class="btn btn-outline-danger btn-sm">Delete</button></form></th>
                 </tr>
             @endforeach
         </table>
