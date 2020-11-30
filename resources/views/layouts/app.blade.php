@@ -38,9 +38,10 @@
 
 @include('layouts.navbar')
 
-<main role="main" class="starter-template">
+<div class="container">
+    @include('pages.errors')
     @yield('content')
-</main>
+</div>
 
 
 </body>

@@ -9,8 +9,9 @@
             <h1>Create a Category</h1>
         </div>
         <div class="col-12">
-            @csrf
-            <form action="/api/category" method="post" target="hiddenFrame">
+
+            <form action="/create_category/save" method="post">
+                @csrf
                 @foreach($category->getFillable() as $fillable)
                     <div class="form-group">
                         <label for="exampleInputPassword1">{{$fillable}}</label>

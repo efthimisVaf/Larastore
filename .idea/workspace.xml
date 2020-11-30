@@ -24,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/create_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/create_category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +210,7 @@
       <workItem from="1606618309765" duration="4281000" />
       <workItem from="1606622627093" duration="140000" />
       <workItem from="1606630128830" duration="17203000" />
-      <workItem from="1606696990043" duration="2191000" />
+      <workItem from="1606696990043" duration="8734000" />
     </task>
     <servers />
   </component>
@@ -233,11 +234,11 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2373" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606461534277" />
-    <state x="680" y="481" width="302" height="155" key="NewPhpFileDialog" timestamp="1606636312324">
-      <screen x="0" y="27" width="1680" height="1023" />
+    <state x="2457" y="479" width="302" height="155" key="NewPhpFileDialog" timestamp="1606699968494">
+      <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="680" y="481" width="302" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1606636312324" />
-    <state x="2457" y="479" width="356" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606558244507" />
+    <state x="2457" y="479" width="356" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606699968494" />
     <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1606647530626">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>

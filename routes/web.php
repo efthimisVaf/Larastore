@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,5 @@ Route::get('/', [PagesController::class,'welcome']);
 Route::get('/documentation', [PagesController::class,'documentation']);
 
 Route::get('/create_category', [PagesController::class,'createCategory']);
+
+Route::post('/create_category/save', [CategoryController::class,'storeFromForm']);
