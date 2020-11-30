@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-    @section('content')
-        <h1>Welcome!</h1>
-        <p><?php echo $welcome; ?></p>
-    @endsection
+@section('content')
+    <div class="row">
+        <div class="col-12">
+            <h1>Welcome!</h1>
+            <p><?php echo $welcome; ?></p>
+        </div>
+    </div>
+@endsection

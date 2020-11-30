@@ -17,56 +17,82 @@ class CategoryController extends Controller
         return Category::get();
     }
 
+
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'category_name' => 'required|unique:categories'
+
+        ]);
+        return Category::create($request->all());
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public static function create()
     {
-        //
+        $category = new Category();
+        $categories = Category::get();
+        return view('pages.create_category', compact('category', 'categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function storeFromForm(Request $request)
     {
-        return Category::create($request->all());
+        $this->validate($request, ['category_name' => 'required|unique:categories']);
+
+        Category::create($request->all());
+        return redirect()->action([PagesController::class,'createCategory'])->with('success','Category successfully Created');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $category = Category::whereId($id)->firstOrFail();
 
-        return response($category,200);
+        return response($category, 200);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public static function edit($id)
+    {
+        $category = Category::whereId($id)->firstOrfail();
+        error_log(implode(' ', $category->getFillable()));
+        error_log($category->category_name);
+        return view('pages.editCategory')->with('category', $category);
+    }
+
+    public function updateFromForm(Request $request, $id)
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -77,7 +103,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
