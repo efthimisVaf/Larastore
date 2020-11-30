@@ -26,6 +26,10 @@
             padding: 3rem 1.5rem;
             text-align: center;
         }
+
+        table{
+            margin-top: 50px;
+        }
     </style>
 
 </head>

@@ -25,7 +25,8 @@ class CategoryController extends Controller
     public static function create()
     {
         $category = new Category();
-        return view('pages.create_category', compact('category'));
+        $categories = Category::get();
+        return view('pages.create_category', compact('category', 'categories'));
     }
 
     /**
