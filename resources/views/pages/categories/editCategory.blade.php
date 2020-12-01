@@ -17,7 +17,7 @@
                     <input name="category_name" type="text" class="form-control" id="exampleInputPassword1"
                            placeholder="{{$category->category_name}}">
                 </div>
-
+            <a href="/categories/list" class="btn btn-outline-primary">Go Back</a>
             <button type="submit" class="btn btn-primary">Update Category</button>
         </form>
     </div>

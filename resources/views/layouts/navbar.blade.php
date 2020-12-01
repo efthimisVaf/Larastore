@@ -10,7 +10,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="#">Product</a>
-                    <a class="dropdown-item" href="/create_category">Category</a>
+                    <a class="dropdown-item" href="/categories/list">Category</a>
                 </div>
             </li>
         </ul>

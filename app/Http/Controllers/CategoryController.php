@@ -34,29 +34,6 @@ class CategoryController extends Controller
         return Category::create($request->all());
     }
 
-
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public static function create()
-    {
-        $category = new Category();
-        $categories = Category::get();
-        return view('pages.create_category', compact('category', 'categories'));
-    }
-
-    public function storeFromForm(Request $request)
-    {
-        $this->validate($request, ['category_name' => 'required|unique:categories']);
-
-        Category::create($request->all());
-        return redirect()->action([PagesController::class,'createCategory'])->with('success','Category successfully Created');
-
-    }
-
     /**
      * Display the specified resource.
      *
@@ -70,24 +47,8 @@ class CategoryController extends Controller
         return response($category, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public static function edit($id)
-    {
-        $category = Category::whereId($id)->firstOrfail();
-        error_log(implode(' ', $category->getFillable()));
-        error_log($category->category_name);
-        return view('pages.editCategory')->with('category', $category);
-    }
 
-    public function updateFromForm(Request $request, $id)
-    {
-        //
-    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -110,4 +71,53 @@ class CategoryController extends Controller
     {
         //
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public static function create()
+    {
+        $category = new Category();
+        $categories = Category::get();
+        error_log('Hello');
+        return view('pages.categories.addCategory', compact('category', 'categories'));
+    }
+
+    public function storeFromForm(Request $request)
+    {
+        $this->validate($request, ['category_name' => 'required|unique:categories']);
+
+        Category::create($request->all());
+        return redirect()->action([PagesController::class,'categoriesView'])->with('success','Category successfully Created');
+
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public static function edit($id)
+    {
+        $category = Category::whereId($id)->firstOrfail();
+        error_log(implode(' ', $category->getFillable()));
+        error_log($category->category_name);
+        return view('pages.categories.editCategory')->with('category', $category);
+    }
+
+
+
 }

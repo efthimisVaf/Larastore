@@ -31,6 +31,10 @@
         table{
             margin-top: 50px;
         }
+
+        afto{
+            background-color: maroon; !important;
+        }
     </style>
 
 </head>
