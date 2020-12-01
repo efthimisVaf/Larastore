@@ -16,11 +16,18 @@ class PagesController extends Controller
         return view('pages.documentation');
     }
 
+    public static function categoriesView()
+    {
+        $category = new Category();
+        $categories = Category::get();
+        return view('pages.categories.categories', compact('category', 'categories'));
+    }
+
     public function createCategory(){
         return CategoryController::create();
     }
 
-    public function editCategory($id){
+    public function editCategoryView($id){
         error_log($id);
         return CategoryController::edit($id);
     }
@@ -28,17 +35,16 @@ class PagesController extends Controller
     public function deleteFromUi($id){
         error_log('Some message here.');
         Category::find($id)->delete();
-        return redirect()->action([PagesController::class,'createCategory'])->with('success','Category successfully Deleted');
+        return redirect()->action([PagesController::class,'categoriesView'])->with('success','Category successfully Deleted');
 
     }
 
     public function updateWithUi(Request $request, $id){
         $category = Category::find($id);
         $category->category_name = $request->input('category_name');
-        error_log($request->category_name);
-
+        $this->validate($request, ['category_name' => 'required|unique:categories']);
         $category->save($request->all());
-        return redirect()->action([PagesController::class,'createCategory'])->with('success','Category successfully Updated');
+        return redirect()->action([PagesController::class,'categoriesView'])->with('success','Category successfully Updated');
     }
 
 }

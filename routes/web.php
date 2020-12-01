@@ -19,16 +19,19 @@ Route::get('/', [PagesController::class,'welcome']);
 
 Route::get('/documentation', [PagesController::class,'documentation']);
 
-Route::get('/create_category', [PagesController::class,'createCategory']);
+Route::get('/categories/list', [PagesController::class,'categoriesView']);
 
-Route::get('/editCategory/{id}', [PagesController::class,'editCategory']);
+Route::get('/editCategoryView/{id}', [PagesController::class,'editCategoryView']);
 
-Route::delete('/deleteCatWithUi/{id}', [PagesController::class,'deleteFromUi']);
-
-
+Route::get('createCategoryView', [CategoryController::class,'create']);
 
 
 
-Route::post('/create_category/save', [CategoryController::class,'storeFromForm']);
+
+
+
+Route::post('createCategory/save', [CategoryController::class,'storeFromForm']);
 
 Route::patch('/updateCatWithUi/{id}', [PagesController::class,'updateWithUi']);
+
+Route::delete('/deleteCatWithUi/{id}', [PagesController::class,'deleteFromUi']);
