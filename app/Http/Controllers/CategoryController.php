@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\PageControllers\PagesController;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -16,8 +17,6 @@ class CategoryController extends Controller
     {
         return Category::get();
     }
-
-
 
     /**
      * Store a newly created resource in storage.
@@ -48,7 +47,6 @@ class CategoryController extends Controller
     }
 
 
-
     /**
      * Update the specified resource in storage.
      *
@@ -73,16 +71,6 @@ class CategoryController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-
-
     /**
      * Show the form for creating a new resource.
      *
@@ -92,7 +80,6 @@ class CategoryController extends Controller
     {
         $category = new Category();
         $categories = Category::get();
-        error_log('Hello');
         return view('pages.categories.addCategory', compact('category', 'categories'));
     }
 
@@ -101,9 +88,10 @@ class CategoryController extends Controller
         $this->validate($request, ['category_name' => 'required|unique:categories']);
 
         Category::create($request->all());
-        return redirect()->action([PagesController::class,'categoriesView'])->with('success','Category successfully Created');
+        return redirect()->action([PagesController::class, 'categoriesView'])->with('success', 'Category successfully Created');
 
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -118,6 +106,27 @@ class CategoryController extends Controller
         return view('pages.categories.editCategory')->with('category', $category);
     }
 
+    public function updateWithUi(Request $request, $id)
+    {
+        $category = Category::find($id);
+
+        if ($category->category_name == $request->category_name) {
+            $this->validate($request, ['category_name' => 'required']);
+        } else {
+            $this->validate($request, ['category_name' => 'required|unique:categories']);
+        }
+
+        $category->update($request->all());
+        return redirect()->action([PagesController::class, 'categoriesView'])->with('success', 'Category successfully Updated');
+    }
+
+    public function deleteFromUi($id)
+    {
+        error_log('Some message here.');
+        Category::find($id)->delete();
+        return redirect()->action([PagesController::class, 'categoriesView'])->with('success', 'Category successfully Deleted');
+
+    }
 
 
 }
