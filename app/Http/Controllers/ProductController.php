@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\PageControllers\PagesController;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
@@ -146,7 +147,7 @@ class ProductController extends Controller
             ['digits_between' => 'Please select :attribute']);
 
         if ($validator->fails()) {
-            return redirect('editProductView/')->withErrors($validator)->withInput();
+            return Redirect::back()->withErrors($validator)->withInput();
         }
 
 
