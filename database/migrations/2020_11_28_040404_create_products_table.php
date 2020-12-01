@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->double("price");
             $table->foreignId('vat_tariff_id')->references('id')->on('vat_tariffs');
-            $table->foreignId('category_id')->references('id')->on('categories')->onUpdate('CASCADE');
+            $table->foreignId('category_id')->nullable()->references('id')->on('categories')->onDelete('set null');
         });
     }
 

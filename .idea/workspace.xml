@@ -20,15 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da67ebc1-cde1-471a-986f-e7e2d12ea7e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/categories/categories.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageControllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageControllers/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_28_040404_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_28_040404_create_products_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/categories.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/editCategory.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/categories/editCategory.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/categories/editCategory.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/categories/editCategory.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,15 +176,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/icons" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/PageControllers" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/resources/views/pages" />
       <recent name="$PROJECT_DIR$/resources/views/pages/categories" />
       <recent name="$PROJECT_DIR$/resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/icons" />
-      <recent name="$PROJECT_DIR$/resources/views" />
     </key>
   </component>
   <component name="RunManager">
@@ -223,7 +223,9 @@
       <workItem from="1606630128830" duration="17203000" />
       <workItem from="1606696990043" duration="26161000" />
       <workItem from="1606773549017" duration="3575000" />
-      <workItem from="1606800860576" duration="11776000" />
+      <workItem from="1606800860576" duration="11924000" />
+      <workItem from="1606815771679" duration="4320000" />
+      <workItem from="1606820660680" duration="18841000" />
     </task>
     <servers />
   </component>
@@ -243,19 +245,23 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2373" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606461534277">
+    <state x="2373" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606833880027">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2373" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606461534277" />
+    <state x="2373" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606833880027" />
     <state x="2457" y="479" width="302" height="155" key="NewPhpFileDialog" timestamp="1606720271739">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="680" y="481" width="302" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1606636312324" />
     <state x="2457" y="479" width="356" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606720271739" />
-    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1606647530626">
+    <state x="2304" y="252" key="run.anything.popup" timestamp="1606839482673">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606647530626" />
+    <state x="2304" y="252" key="run.anything.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606839482673" />
+    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1606835244117">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606835244117" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

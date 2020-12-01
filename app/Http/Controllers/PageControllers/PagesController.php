@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\PageControllers;
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Controller;
 use App\Models\Category;
-use Illuminate\Http\Request;
+use App\Models\Product;
+
 
 class PagesController extends Controller
 {
@@ -21,6 +24,14 @@ class PagesController extends Controller
         $category = new Category();
         $categories = Category::get();
         return view('pages.categories.categories', compact('category', 'categories'));
+    }
+
+    public static function productsView()
+    {
+        $product = new Product();
+        $products = Product::get();
+        error_log('hello');
+        return view('pages.products.products', compact('product', 'products'));
     }
 
     public function editCategoryView($id){
