@@ -41,9 +41,33 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
+
         return Product::create($request->all());
 
     }
+
+    /**
+     * Implements the previous function on the frond end.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function storeFromForm(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), ['name' => 'required|unique:products', 'description' => 'required',
+            'vat_tariff_id' => 'required|digits_between:0,5000',
+            'category_id' => 'required|digits_between:0,5000'],
+            ['digits_between' => 'Please select :attribute']);
+
+        if ($validator->fails()) {
+            return redirect('createProductView')->withErrors($validator)->withInput();
+        }
+        $this->store($request);
+        return redirect()->action([PagesController::class, 'productsView'])->with('success', 'Product successfully Created');
+    }
+
 
     /**
      * Display the specified resource.
@@ -86,48 +110,13 @@ class ProductController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Implements the previous function on the frond end.
      *
-     * @param \App\Models\Product $product
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Request $request, $id)
-    {
-        $product = Product::findOrFail($id);
-        $product->delete();
-
-        return 204;
-    }
-
-    public function storeFromForm(Request $request)
-    {
-
-        $validator = Validator::make($request->all(), ['name' => 'required|unique:products',
-            'vat_tariff_id' => 'required|digits_between:0,5000',
-            'category_id' => 'required|digits_between:0,5000'],
-            ['digits_between' => 'Please select :attribute']);
-
-        if ($validator->fails()) {
-            return redirect('createProductView')->withErrors($validator)->withInput();
-        }
-
-        //$this->validate($request, []);
-
-        Product::create($request->all());
-        return redirect()->action([PagesController::class, 'productsView'])->with('success', 'Product successfully Created');
-    }
-
-    public function deleteFromUi($id)
-    {
-        error_log('Some message here.');
-        Product::find($id)->delete();
-        return redirect()->action([PagesController::class, 'productsView'])->with('success', 'Product successfully Deleted');
-
-    }
-
     public function updateWithUi(Request $request, $id)
     {
-
 
         $product = Product::find($id);
 
@@ -139,7 +128,6 @@ class ProductController extends Controller
 
             $this->validate($request, ['name' => 'required|unique:products']);
         }
-
 
         $validator = Validator::make($request->all(), ['name' => 'required',
             'vat_tariff_id' => 'required|digits_between:0,5000',
@@ -155,5 +143,35 @@ class ProductController extends Controller
         error_log('Hello');
         return redirect()->action([PagesController::class, 'productsView'])->with('success', 'Product successfully Updated');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param $id
+     * @return int
+     */
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return 204;
+    }
+
+
+    /**
+     * Implements the previous function on the frond end.
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteFromUi($id)
+    {
+        $this->destroy($id);
+        return redirect()->action([PagesController::class, 'productsView'])->with('success', 'Product successfully Deleted');
+
+    }
+
+
 
 }

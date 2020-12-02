@@ -34,6 +34,22 @@ class CategoryController extends Controller
     }
 
     /**
+     * Implements the previous function on the frond end.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function storeFromForm(Request $request)
+    {
+        $this->validate($request, ['category_name' => 'required|unique:categories']);
+
+        $this->store($request);
+
+        return redirect()->action([PagesController::class, 'categoriesView'])->with('success', 'Category successfully Created');
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param int $id
@@ -56,7 +72,28 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+
+        if ($category->category_name == $request->category_name) {
+            $this->validate($request, ['category_name' => 'required']);
+        } else {
+            $this->validate($request, ['category_name' => 'required|unique:categories']);
+        }
+
+        $category->update($request->all());
+    }
+
+    /**
+     * Implements the previous function on the frond end.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateWithUi(Request $request, $id)
+    {
+        $this->update($request, $id);
+        return redirect()->action([PagesController::class, 'categoriesView'])->with('success', 'Category successfully Updated');
     }
 
     /**
@@ -67,7 +104,21 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        error_log('Hello');
+        Category::find($id)->delete();
+    }
+
+
+    /**
+     * Implements the previous function on the frond end.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteFromUi($id)
+    {
+        $this->destroy($id);
+        return redirect()->action([PagesController::class, 'categoriesView'])->with('success', 'Category successfully Deleted');
     }
 
 
@@ -83,15 +134,6 @@ class CategoryController extends Controller
         return view('pages.categories.addCategory', compact('category', 'categories'));
     }
 
-    public function storeFromForm(Request $request)
-    {
-        $this->validate($request, ['category_name' => 'required|unique:categories']);
-
-        Category::create($request->all());
-        return redirect()->action([PagesController::class, 'categoriesView'])->with('success', 'Category successfully Created');
-
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -104,28 +146,6 @@ class CategoryController extends Controller
         error_log(implode(' ', $category->getFillable()));
         error_log($category->category_name);
         return view('pages.categories.editCategory')->with('category', $category);
-    }
-
-    public function updateWithUi(Request $request, $id)
-    {
-        $category = Category::find($id);
-
-        if ($category->category_name == $request->category_name) {
-            $this->validate($request, ['category_name' => 'required']);
-        } else {
-            $this->validate($request, ['category_name' => 'required|unique:categories']);
-        }
-
-        $category->update($request->all());
-        return redirect()->action([PagesController::class, 'categoriesView'])->with('success', 'Category successfully Updated');
-    }
-
-    public function deleteFromUi($id)
-    {
-        error_log('Some message here.');
-        Category::find($id)->delete();
-        return redirect()->action([PagesController::class, 'categoriesView'])->with('success', 'Category successfully Deleted');
-
     }
 
 
