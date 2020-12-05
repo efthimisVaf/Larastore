@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
-
 use App\Http\Controllers\PageControllers\PagesController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -19,26 +18,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class,'welcome']);
 Route::get('/documentation', [PagesController::class,'documentation']);
+
 Route::get('/categories/list', [PagesController::class,'categoriesView']);
-
-
-Route::get('createCategoryView', [CategoryController::class,'create']);
-Route::get('/editCategoryView/{id}', [PagesController::class,'editCategoryView']);
-Route::patch('/updateCatWithUi/{id}', [CategoryController::class,'updateWithUi']);
-Route::post('createCategory/save', [CategoryController::class,'storeFromForm']);
-Route::delete('/deleteCatWithUi/{id}', [CategoryController::class,'deleteFromUi']);
+Route::get('createCategoryView', [PagesController::class,'createCategory']);
+Route::get('/editCategoryView/{id}', [PagesController::class,'updateCategoryView']);
+Route::patch('/updateCatWithUi/{id}', [PagesController::class,'updateCategory']);
+Route::post('createCategory/save', [PagesController::class,'storeCategory']);
+Route::delete('/deleteCatWithUi/{id}', [PagesController::class,'deleteCategory']);
 
 Route::get('/products/list', [PagesController::class,'productsView']);
-Route::get('createProductView', [ProductController::class,'create']);
-Route::post('createProduct/save', [ProductController::class,'storeFromForm']);
-Route::delete('/deleteProdWithUi/{id}', [ProductController::class,'deleteFromUi']);
-Route::get('/editProductView/{id}', [ProductController::class,'edit']);
-Route::patch('/updateProdWithUi/{id}', [ProductController::class,'updateWithUi']);
+Route::get('createProductView', [PagesController::class,'createProduct']);
+Route::post('createProduct/save', [PagesController::class,'storeProduct']);
+Route::delete('/deleteProdWithUi/{id}', [PagesController::class,'deleteProduct']);
+Route::get('/editProductView/{id}', [PagesController::class,'updateProductView']);
+Route::patch('/updateProdWithUi/{id}', [PagesController::class,'updateProduct']);
 
 
 
+Auth::routes();
 
-
-
-
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

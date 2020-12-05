@@ -21,6 +21,4 @@ class Category extends Model
          $this->attributes['category_name'] = $value;
     }
 
-
-
 }
