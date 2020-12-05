@@ -20,9 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da67ebc1-cde1-471a-986f-e7e2d12ea7e4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Laravel-Supermarket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Laravel-Supermarket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageControllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageControllers/PagesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/appold.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/categories/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/categories/categories.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +165,7 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kUEsYRjGIlPOSKzaMIwyRY4zgc" />
@@ -165,19 +181,20 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/icons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public/icons" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers/PageControllers" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/resources/views/pages" />
       <recent name="$PROJECT_DIR$/resources/views/pages/categories" />
       <recent name="$PROJECT_DIR$/resources" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/icons" />
     </key>
   </component>
   <component name="RunManager">
@@ -220,6 +237,9 @@
       <workItem from="1606815771679" duration="4320000" />
       <workItem from="1606820660680" duration="19032000" />
       <workItem from="1606864812867" duration="4752000" />
+      <workItem from="1607068087687" duration="9900000" />
+      <workItem from="1607125013670" duration="1138000" />
+      <workItem from="1607153421733" duration="13033000" />
     </task>
     <servers />
   </component>
@@ -239,30 +259,54 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2373" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606833880027">
+    <state x="2373" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607166532897">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2373" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606833880027" />
+    <state x="2373" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607166532897" />
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom" timestamp="1607118283912">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607118283912" />
+    <state width="1878" height="277" key="GridCell.Tab.0.center" timestamp="1607118283912">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="277" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607118283912" />
+    <state width="1878" height="277" key="GridCell.Tab.0.left" timestamp="1607118283912">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="277" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607118283912" />
+    <state width="1878" height="277" key="GridCell.Tab.0.right" timestamp="1607118283912">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="277" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607118283912" />
+    <state x="2325" y="278" width="620" height="564" key="NewPhpClassDialog" timestamp="1607166486089">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2325" y="278" width="620" height="564" key="NewPhpClassDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607166486089" />
     <state x="2457" y="479" width="302" height="155" key="NewPhpFileDialog" timestamp="1606720271739">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="680" y="481" width="302" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1606636312324" />
     <state x="2457" y="479" width="356" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606720271739" />
+    <state x="2356" y="327" width="558" height="460" key="refactoring.ChangeSignatureDialog" timestamp="1607159974446">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2356" y="327" width="558" height="460" key="refactoring.ChangeSignatureDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607159974446" />
     <state x="2304" y="252" key="run.anything.popup" timestamp="1606839482673">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2304" y="252" key="run.anything.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606839482673" />
-    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1606871602631">
+    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1607164577192">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606871602631" />
+    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607164577192" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/layouts/app.blade.php</url>
-          <line>41</line>
+          <url>file://$PROJECT_DIR$/resources/views/layouts/appold.blade.php</url>
+          <line>36</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

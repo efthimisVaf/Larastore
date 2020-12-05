@@ -10,6 +10,7 @@
             <th scope="col"></th>
             <th scope="col">
                 <form action="/createCategoryView/" method="GET">
+                    @csrf
                     <button class="btn btn-primary">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-plus" fill="currentColor"
                              xmlns="http://www.w3.org/2000/svg">
@@ -29,6 +30,7 @@
                     <th>{{$cat->category_name}}</th>
                     <th>
                         <form action="/editCategoryView/{{$cat->id}}">
+                            @csrf
                             <button class="btn btn-outline-dark btn-sm">Edit</button>
                         </form>
                     </th>
