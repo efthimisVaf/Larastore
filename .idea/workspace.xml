@@ -23,18 +23,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/Laravel-Supermarket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Laravel-Supermarket.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageControllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageControllers/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/appold.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/categories/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/categories/categories.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
@@ -166,6 +164,19 @@
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/vendor/league/event" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kUEsYRjGIlPOSKzaMIwyRY4zgc" />
@@ -181,7 +192,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../a/Laravel-Supermarket" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -239,7 +250,10 @@
       <workItem from="1606864812867" duration="4752000" />
       <workItem from="1607068087687" duration="9900000" />
       <workItem from="1607125013670" duration="1138000" />
-      <workItem from="1607153421733" duration="13033000" />
+      <workItem from="1607153421733" duration="14301000" />
+      <workItem from="1607186675938" duration="599000" />
+      <workItem from="1607439035127" duration="6955000" />
+      <workItem from="1607576314651" duration="2677000" />
     </task>
     <servers />
   </component>
@@ -263,22 +277,26 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2373" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607166532897" />
-    <state width="1878" height="277" key="GridCell.Tab.0.bottom" timestamp="1607118283912">
+    <state x="2423" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1607443341997">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607118283912" />
-    <state width="1878" height="277" key="GridCell.Tab.0.center" timestamp="1607118283912">
+    <state x="2423" y="311" width="424" height="491" key="FileChooserDialogImpl/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607443341997" />
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom" timestamp="1607474600128">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607118283912" />
-    <state width="1878" height="277" key="GridCell.Tab.0.left" timestamp="1607118283912">
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607474600128" />
+    <state width="1878" height="277" key="GridCell.Tab.0.center" timestamp="1607474600128">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607118283912" />
-    <state width="1878" height="277" key="GridCell.Tab.0.right" timestamp="1607118283912">
+    <state width="1878" height="277" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607474600128" />
+    <state width="1878" height="277" key="GridCell.Tab.0.left" timestamp="1607474600128">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607118283912" />
+    <state width="1878" height="277" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607474600128" />
+    <state width="1878" height="277" key="GridCell.Tab.0.right" timestamp="1607474600128">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="277" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607474600128" />
     <state x="2325" y="278" width="620" height="564" key="NewPhpClassDialog" timestamp="1607166486089">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
@@ -288,6 +306,10 @@
     </state>
     <state x="680" y="481" width="302" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1606636312324" />
     <state x="2457" y="479" width="356" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606720271739" />
+    <state x="2349" y="297" width="581" height="512" key="find.popup" timestamp="1607446327351">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2349" y="297" width="581" height="512" key="find.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1607446327351" />
     <state x="2356" y="327" width="558" height="460" key="refactoring.ChangeSignatureDialog" timestamp="1607159974446">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>

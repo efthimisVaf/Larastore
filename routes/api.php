@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\API\AuthController;
 use App\Http\Controllers\VatTariffController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -16,15 +17,17 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
+Route::post('login', [AuthController::class, 'login']);
+
 Route::get('products', [ProductController::class, 'index']);
-Route::delete('products/{id}', [ProductController::class, 'destroy']);
+Route::delete('products/{id}', [ProductController::class, 'destroy'])->middleware('auth:api');
 Route::get('products/{id}', [ProductController::class, 'show']);
-Route::post('products', [ProductController::class, 'store']);
-Route::put('products/{id}', [ProductController::class, 'update']);
+Route::post('products', [ProductController::class, 'store'])->middleware('auth:api');
+Route::put('products/{id}', [ProductController::class, 'update'])->middleware('auth:api');
 
 Route::get('vat', [VatTariffController::class, 'index']);
 Route::get('vat/{id}', [VatTariffController::class, 'show']);
 
 Route::get('category', [CategoryController::class, 'index']);
-Route::post('category', [CategoryController::class, 'store']);
-Route::get('category/{id}', [CategoryController::class, 'show']);
+Route::post('category', [CategoryController::class, 'store'])->middleware('auth:api');
+Route::get('category/{id}', [CategoryController::class, 'show'])->middleware('auth:api');
