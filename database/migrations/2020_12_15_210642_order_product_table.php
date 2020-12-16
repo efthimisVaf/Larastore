@@ -18,8 +18,8 @@ class OrderProductTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('order_id')->unsigned();
             $table->unsignedBigInteger('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('CASCADE');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('CASCADE');
         });
     }
 

@@ -28,7 +28,7 @@ class CategoryService
     public function update(Request $request, $id)
     {
         $category = Category::find($id);
-        $category->update($request->all());
+        return $category->update($request->all());
     }
 
     public function destroy($id)

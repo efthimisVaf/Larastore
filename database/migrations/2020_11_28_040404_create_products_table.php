@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('description');
+            $table->string('description')->default('Description is missing');
             $table->double("price");
             $table->foreignId('vat_tariff_id')->references('id')->on('vat_tariffs');
             $table->foreignId('category_id')->nullable()->references('id')->on('categories')->onDelete('set null');
