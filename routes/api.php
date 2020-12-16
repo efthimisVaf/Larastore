@@ -20,8 +20,8 @@ use App\Http\Controllers\CategoryController;
 Route::post('login', [AuthController::class, 'login']);
 
 Route::get('products', [ProductController::class, 'index']);
-Route::delete('products/{id}', [ProductController::class, 'destroy'])->middleware('auth:api');
 Route::get('products/{id}', [ProductController::class, 'show']);
+Route::delete('products/{id}', [ProductController::class, 'destroy'])->middleware('auth:api');
 Route::post('products', [ProductController::class, 'store'])->middleware('auth:api');
 Route::put('products/{id}', [ProductController::class, 'update'])->middleware('auth:api');
 
@@ -29,5 +29,7 @@ Route::get('vat', [VatTariffController::class, 'index']);
 Route::get('vat/{id}', [VatTariffController::class, 'show']);
 
 Route::get('category', [CategoryController::class, 'index']);
+Route::get('category/{id}', [CategoryController::class, 'show']);
 Route::post('category', [CategoryController::class, 'store'])->middleware('auth:api');
-Route::get('category/{id}', [CategoryController::class, 'show'])->middleware('auth:api');
+Route::delete('category/{id}', [CategoryController::class, 'destroy'])->middleware('auth:api');
+Route::put('category/{id}', [CategoryController::class, 'update'])->middleware('auth:api');

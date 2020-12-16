@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\PageControllers\PagesController;
-use App\Models\Category;
+use App\Services\CategoryService;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
+    protected $categoryService;
+
+    public function __construct(CategoryService $categoryService)
+    {
+        $this->categoryService = $categoryService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return Category::get();
+        return $this->categoryService->index();
     }
 
     /**
@@ -31,7 +37,7 @@ class CategoryController extends Controller
             'category_name' => 'required|unique:categories'
 
         ]);
-        return Category::create($request->all());
+        return $this->categoryService->store($request);
     }
 
 
@@ -44,7 +50,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::whereId($id)->firstOrFail();
+        $category = $this->categoryService->show($id);
 
         return response($category, 200);
     }
@@ -59,7 +65,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = Category::find($id);
+        $category = $this->categoryService->show($id);
 
         if ($category->category_name == $request->category_name) {
             $this->validate($request, ['category_name' => 'required']);
@@ -67,7 +73,7 @@ class CategoryController extends Controller
             $this->validate($request, ['category_name' => 'required|unique:categories']);
         }
 
-        $category->update($request->all());
+       return  $this->categoryService->update($request,$id);
     }
 
 
@@ -79,19 +85,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Category::find($id)->delete();
+       return $this->categoryService->destroy($id);
     }
-
-
-
-
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-
 
 }

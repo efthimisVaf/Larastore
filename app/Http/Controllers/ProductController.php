@@ -2,14 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\PageControllers\PagesController;
-use App\Models\Product;
+use App\Services\ProductService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
+
+    protected $productService;
+
+    /**
+     * ProductController constructor.
+     * @param $productService
+     */
+    public function __construct(ProductService $productService)
+    {
+        $this->productService = $productService;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +27,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::with('VatTariff', 'Category')->get();
+        return $this->productService->index();
     }
 
 
@@ -30,10 +40,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        return Product::create($request->all());
-
+        return $this->productService->store($request);
     }
 
 
@@ -47,9 +54,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::with('VatTariff', 'Category')->whereId($id)->firstOrFail();
-
-        return response($product, 200);
+        return $this->productService->show($id);
     }
 
 
@@ -63,13 +68,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product = Product::findOrFail($id);
-        $product->update($request->all());
-
-        return $product;
+        return $this->productService->update($request, $id);
     }
-
-
 
     /**
      * Remove the specified resource from storage.
@@ -79,14 +79,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::findOrFail($id);
-        $product->delete();
-
-        return 204;
+        return $this->productService->destroy($id);
     }
-
-
-
-
 
 }
