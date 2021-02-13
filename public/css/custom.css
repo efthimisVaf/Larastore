@@ -15,3 +15,25 @@ table{
 afto{
     background-color: maroon; !important;
 }
+
+pre {
+    margin-bottom: 0px;
+}
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.sample-request {
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.sample-response {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

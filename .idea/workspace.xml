@@ -21,13 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="da67ebc1-cde1-471a-986f-e7e2d12ea7e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/CategoryService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CategoryService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/ProductService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_28_040404_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_28_040404_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_210642_order_product_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_210642_order_product_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/documentation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/documentation.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +182,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../a/Laravel-Supermarket" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -256,6 +253,8 @@
       <workItem from="1607576314651" duration="2677000" />
       <workItem from="1608063250693" duration="7888000" />
       <workItem from="1608107809225" duration="9066000" />
+      <workItem from="1613191971499" duration="1363000" />
+      <workItem from="1613210278454" duration="2105000" />
     </task>
     <servers />
   </component>
@@ -344,6 +343,10 @@
     </state>
     <state x="680" y="481" width="302" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1606636312324" />
     <state x="2457" y="479" width="356" height="155" key="NewPhpFileDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1606720271739" />
+    <state x="2144" y="188" width="992" height="737" key="SettingsEditor" timestamp="1613211001985">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2144" y="188" width="992" height="737" key="SettingsEditor/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1613211001985" />
     <state x="2349" y="297" width="581" height="512" key="find.popup" timestamp="1608107869352">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
