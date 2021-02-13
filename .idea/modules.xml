@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Laravel-Supermarket.iml" filepath="$PROJECT_DIR$/.idea/Laravel-Supermarket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Larastore.iml" filepath="$PROJECT_DIR$/.idea/Larastore.iml" />
     </modules>
   </component>
 </project>
