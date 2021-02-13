@@ -16,6 +16,10 @@ afto{
     background-color: maroon; !important;
 }
 
+.endpoint {
+    margin-top: 65px;
+}
+
 pre {
     margin-bottom: 0px;
 }
