@@ -4,7 +4,7 @@
 
 
     <div class="endpoint">
-        <h2>Create a user [POST]</h2>
+        <h2>Create a user [POST]<p class="link">/api/register</p></h2>
         <p class="sample-request">&#8226; sample request (application/json)</p>
         {{--//@formatter:off--}}
         <pre><code>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="endpoint">
-        <h2>Log-in [POST]</h2>
+        <h2>Log-in [POST]<p class="link">/api/login</p></h2>
         <p class="sample-request">&#8226; sample request (application/json)</p>
         {{--//@formatter:off--}}
         <pre><code>
@@ -57,6 +57,46 @@
        },
        "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianR
      {
+         </code></pre>
+        {{--//@formatter:on--}}
+    </div>
+
+    <div class="endpoint">
+        <h2>Get all products [GET]<p class="link">/api/products</p></h2>
+        {{--//@formatter:on--}}
+        <p class="sample-response">&#8226; sample response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     [
+        {
+            "id": 3,
+            "name": "cupiditate",
+            "description": "Vero eum aperiam et voluptas praesentium nostrum in.",
+            "price": 179.68
+        },
+        {
+            "id": 4,
+            "name": "voluptas",
+            "description": "Ea laudantium incidunt voluptatem iure ad.",
+            "price": 151.54
+        }
+     ]
+         </code></pre>
+        {{--//@formatter:on--}}
+    </div>
+
+    <div class="endpoint">
+        <h2>Get a product [GET]<p class="link">/api/product/{id}</p></h2>
+        {{--//@formatter:on--}}
+        <p class="sample-response">&#8226; sample response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     {
+        "id": 3,
+        "name": "cupiditate",
+        "description": "Vero eum aperiam et voluptas praesentium nostrum in.",
+        "price": 179.68
+     }
          </code></pre>
         {{--//@formatter:on--}}
     </div>

@@ -10904,3 +10904,8 @@ a.text-dark:focus {
   }
 }
 
+.endpoint .link {
+    color: blue;
+    font-style: italic;
+}
+
