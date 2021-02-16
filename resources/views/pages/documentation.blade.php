@@ -100,4 +100,31 @@
          </code></pre>
         {{--//@formatter:on--}}
     </div>
+
+    <div class="endpoint">
+        <h2>Create a new product [POST]<p class="link">/api/products</p></h2>
+        <p class="sample-request">&#8226; sample request (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     {
+        "name": "bananas",
+        "price": 5.6,
+        "vat_tariff_id": 2,
+        "description": "These are some bananas",
+        "category_id": 3
+     }
+        </code></pre>
+        {{--//@formatter:on--}}
+        <p class="sample-response">&#8226; sample response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+    {
+        "name": "bananas",
+        "price": 5.6,
+        "description": "These are some bananas",
+        "id": 51
+    }
+         </code></pre>
+        {{--//@formatter:on--}}
+    </div>
 @endsection
