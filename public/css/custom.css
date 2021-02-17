@@ -12,12 +12,14 @@ table{
     margin-top: 50px;
 }
 
-afto{
-    background-color: maroon; !important;
-}
-
 .endpoint {
     margin-top: 65px;
+}
+
+.documentation-header {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 pre {

@@ -3,6 +3,9 @@
 @section('content')
 
 
+    <div>
+        <h1 class="documentation-header">Authentication</h1>
+    </div>
     <div class="endpoint">
         <h2>Create a user [POST]<p class="link">/api/register</p></h2>
         <p class="sample-request">&#8226; sample request (application/json)</p>
@@ -61,6 +64,9 @@
         {{--//@formatter:on--}}
     </div>
 
+    <div>
+        <h1 class="documentation-header">Product</h1>
+    </div>
     <div class="endpoint">
         <h2>Get all products [GET]<p class="link">/api/products</p></h2>
         {{--//@formatter:on--}}
@@ -127,4 +133,142 @@
          </code></pre>
         {{--//@formatter:on--}}
     </div>
+
+    <div class="endpoint">
+        <h2>Delete a product [DELETE]<p class="link">/api/products/{id}</p></h2>
+        <p class="sample-response">&#8226; response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+    1
+         </code></pre>
+        {{--//@formatter:on--}}
+    </div>
+
+    <div class="endpoint">
+        <h2>Update or create a new product [PUT]<p class="link">/api/products/{id}</p></h2>
+        <p class="sample-request">UNDER DEVELOPMENT</p>
+    </div>
+
+    <div>
+        <h1 class="documentation-header">Category</h1>
+    </div>
+    <div class="endpoint">
+        <h2>Get all categories [GET]<p class="link">/api/category</p></h2>
+        {{--//@formatter:on--}}
+        <p class="sample-response">&#8226; sample response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     [
+        {
+            "id": 1,
+            "category_name": "fruits"
+        },
+        {
+            "id": 2,
+            "category_name": "vegetables"
+        },
+        {
+            "id": 3,
+            "category_name": "dairy"
+        },
+        {
+            "id": 4,
+            "category_name": "bakery"
+        },
+        {
+            "id": 5,
+            "category_name": "beverages"
+        }
+     ]
+         </code></pre>
+        {{--//@formatter:on--}}
+    </div>
+
+
+    <div class="endpoint">
+        <h2>Get a category [GET]<p class="link">/api/category/{id}</p></h2>
+        <p class="sample-response">&#8226; sample response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     {
+        "id": 1,
+        "category_name": "fruits"
+     }
+         </code></pre>
+        {{--//@formatter:on--}}
+    </div>
+
+    <div class="endpoint">
+        <h2>Create a category [POST]<p class="link">/api/category</p></h2>
+        <p class="sample-request">&#8226; sample request (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     {
+        "category_name": "dairy"
+     }
+         </code></pre>
+        {{--//@formatter:on--}}
+        <p class="sample-response">&#8226; sample response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     {
+        "category_name": "dairy"
+        "id": "9"
+     }
+         </code></pre>
+        {{--//@formatter:on--}}
+    </div>
+
+    <div class="endpoint">
+        <h2>Delete a category [DELETE]<p class="link">/api/category/{id}</p></h2>
+        <p class="sample-response">&#8226; response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+    1
+         </code></pre>
+        {{--//@formatter:on--}}
+    </div>
+
+    <div class="endpoint">
+        <h2>Update or create a new category [PUT]<p class="link">/api/category/{id}</p></h2>
+        <p class="sample-request">UNDER DEVELOPMENT</p>
+    </div>
+
+    <div>
+        <h1 class="documentation-header">Vat Tariff</h1>
+    </div>
+    <div class="endpoint">
+        <h2>Get all Vat Tariffs [GET]<p class="link">/api/vat</p></h2>
+        {{--//@formatter:on--}}
+        <p class="sample-response">&#8226; sample response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     [
+        {
+            "id": 1,
+            "tariff": "LOW",
+        },
+        {
+            "id": 2,
+            "name": "HIGH",
+        }
+     ]
+         </code></pre>
+        {{--//@formatter:on--}}
+    </div>
+
+    <div class="endpoint">
+        <h2>Get a single Vat Tariff [GET]<p class="link">/api/vat/{id}</p></h2>
+        {{--//@formatter:on--}}
+        <p class="sample-response">&#8226; sample response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     {
+            "id": 1,
+            "tariff": "LOW",
+     }
+        </code></pre>
+        {{--//@formatter:on--}}
+    </div>
+
 @endsection
