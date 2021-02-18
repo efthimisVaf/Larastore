@@ -28,8 +28,15 @@ class ProductService
 
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|max:55',
+            'description' => 'required|max:250',
+            'price' => 'required|',
+            'vat_tariff_id' => 'required|exists:vat_tariffs,id'
+        ]);
+
         $product = Product::find($id);
-        return $product->update($request->all());
+        return $product->update($validatedData);
     }
 
     public function destroy($id)

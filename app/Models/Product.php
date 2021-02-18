@@ -12,7 +12,7 @@ class Product extends Model
 
     protected $fillable = ['name', 'description','price','vat_tariff_id','category_id'];
 
-    protected $hidden = ['created_at','updated_at','vat_tariff_id','category_id'];
+    protected $hidden = ['created_at','updated_at','category_id'];
 
 
     public function vatTariff()
