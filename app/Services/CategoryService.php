@@ -27,8 +27,11 @@ class CategoryService
 
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'category_name' => 'required|max:55'
+        ]);
         $category = Category::find($id);
-        return $category->update($request->all());
+        return $category->update($validatedData);
     }
 
     public function destroy($id)

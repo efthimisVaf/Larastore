@@ -136,7 +136,8 @@
 
     <div class="endpoint">
         <h2>Delete a product [DELETE]<p class="link">/api/products/{id}</p></h2>
-        <p class="sample-response">&#8226; response (application/json)</p>
+        <p class="sample-response">&#8226; authentication required<br>
+            &#8226; response (application/json)</p>
         {{--//@formatter:off--}}
         <pre><code>
     1
@@ -145,8 +146,25 @@
     </div>
 
     <div class="endpoint">
-        <h2>Update or create a new product [PUT]<p class="link">/api/products/{id}</p></h2>
-        <p class="sample-request">UNDER DEVELOPMENT</p>
+        <h2>Update a product [PATCH]<p class="link">/api/products/{id}</p></h2>
+        <p class="sample-request">&#8226; authentication required<br>
+            &#8226; sample request (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     {
+        "name": "Water melon",
+        "description": "A juicy water melon",
+        "price": "2",
+        "vat_tariff_id": 1
+     }
+        </code></pre>
+        {{--//@formatter:on--}}
+        <p class="sample-response">&#8226; response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     1
+         </code></pre>
+        {{--//@formatter:on--}}
     </div>
 
     <div>
@@ -200,7 +218,8 @@
 
     <div class="endpoint">
         <h2>Create a category [POST]<p class="link">/api/category</p></h2>
-        <p class="sample-request">&#8226; sample request (application/json)</p>
+        <p class="sample-request">&#8226; authentication required<br>
+            &#8226; sample request (application/json)</p>
         {{--//@formatter:off--}}
         <pre><code>
      {
@@ -221,7 +240,8 @@
 
     <div class="endpoint">
         <h2>Delete a category [DELETE]<p class="link">/api/category/{id}</p></h2>
-        <p class="sample-response">&#8226; response (application/json)</p>
+        <p class="sample-response">&#8226; authentication required<br>
+            &#8226; response (application/json)</p>
         {{--//@formatter:off--}}
         <pre><code>
     1
@@ -230,8 +250,23 @@
     </div>
 
     <div class="endpoint">
-        <h2>Update or create a new category [PUT]<p class="link">/api/category/{id}</p></h2>
-        <p class="sample-request">UNDER DEVELOPMENT</p>
+        <h2>Update a category [PATCH]<p class="link">/api/category/{id}</p></h2>
+        <p class="sample-request">&#8226; authentication required<br>
+                                    &#8226; sample request (application/json)
+        </p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     {
+        "category_name": "vegetables"
+     }
+        </code></pre>
+        {{--//@formatter:on--}}
+        <p class="sample-response">&#8226; response (application/json)</p>
+        {{--//@formatter:off--}}
+        <pre><code>
+     1
+         </code></pre>
+        {{--//@formatter:on--}}
     </div>
 
     <div>
