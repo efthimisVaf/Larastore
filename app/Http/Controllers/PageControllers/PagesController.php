@@ -34,7 +34,7 @@ class PagesController extends Controller
 
     public function welcome()
     {
-        $welcome = 'Welcome to Laravel SuperMarket';
+        $welcome = 'Welcome to Larastore';
         return view('pages.welcome', compact('welcome'));
     }
 
