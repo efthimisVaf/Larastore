@@ -104,5 +104,5 @@ jobs:
       
       - name: Run playbook
         run: |
-          ansible-playbook -i inventory --key-file key.pem --vault-password-file vault_pass ansible/deploy.yml
+          ansible-playbook -vvvv -i inventory --key-file key.pem --vault-password-file vault_pass ansible/deploy.yml
         shell: bash
