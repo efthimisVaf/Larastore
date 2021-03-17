@@ -50,7 +50,7 @@ jobs:
 
       - name: Build & Push the Image
         run: |
-          export REPO=$(${{ github.actor }} | tr '[:upper:]' '[:lower:]')
+          export REPO=$(echo ${{ github.actor }} | tr '[:upper:]' '[:lower:]')
           docker build -t ghcr.io/$REPO/larastore -f ./Docker/Dockerfile .
           docker push ghcr.io/$REPO/larastore
         shell: bash
