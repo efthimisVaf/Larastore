@@ -79,10 +79,11 @@ jobs:
 
       - name: Add variables to vault file
         run: |
+          export REPO=$(echo $GHCR_USERNAME | tr '[:upper:]' '[:lower:]')
           echo "DB_NAME: $DB_NAME" > vault.yml
           echo "DB_USERNAME: $DB_USERNAME" >> vault.yml
           echo "DB_PASSWORD: $DB_PASSWORD" >> vault.yml
-          echo "GHCR_USERNAME: $GHCR_USERNAME" >> vault.yml
+          echo "GHCR_USERNAME: $REPO" >> vault.yml
           echo "GHCR_PASSWORD: $GHCR_PAT" >> vault.yml
           ansible-vault encrypt --vault-password-file vault_pass vault.yml
         shell: bash
@@ -90,7 +91,7 @@ jobs:
           DB_NAME: ${{secrets.DB_NAME}}
           DB_USERNAME: ${{secrets.DB_USERNAME}}
           DB_PASSWORD: ${{secrets.DB_PASSWORD}}
-          GHCR_USERNAME: $REPO
+          GHCR_USERNAME: ${{ github.actor }}
           GHCR_PAT: ${{secrets.CR_PAT}}
 
       - name: Set up for SSH
