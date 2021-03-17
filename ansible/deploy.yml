@@ -1,0 +1,78 @@
+---
+- name: Setup Laravel Server
+  become: yes
+  hosts: all
+  gather_facts: yes
+  vars:
+    - IMAGE_NAME: ghcr.io/{{ GHCR_USERNAME }}/larastore:latest    
+    - PORT: 8000
+  vars_files:
+    - ../vault.yml
+  tasks:
+    - name: Update the server
+      apt:
+        cache_valid_time: 3600
+        upgrade: dist
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        cache_valid_time: 3600
+        update_cache: yes
+        name: docker.io
+        state: present
+      register: docker_installed
+
+    - name: Install pip
+      apt:
+        cache_valid_time: 3600
+        update_cache: yes
+        name: python3-pip
+        state: present
+
+    - name: Install python modules for Docker
+      pip:
+        name: "{{ item }}"
+      loop:
+        - docker
+        - docker-compose
+        
+    - name: Enable Docker service
+      systemd:
+        name: docker
+        enabled: yes
+        masked: no
+        state: restarted
+      when: docker_installed.changed
+
+    - name: Log into ghcr.io
+      docker_login:
+        registry: ghcr.io
+        username: "{{ GHCR_USERNAME }}"
+        password: "{{ GHCR_PASSWORD }}"
+
+    - name: Pull Larastore image
+      docker_image:
+        name: ghcr.io/{{ GHCR_USERNAME }}/larastore:latest
+        source: pull
+
+    - name: Create /docker/larastore it does not exist
+      file:
+        path: /docker/larastore
+        state: directory
+        mode: '0755'
+
+    - name: Create docker-compose.yml
+      template:
+        src: /home/runner/work/Larastore/Larastore/Docker/docker-compose.yml.j2
+        dest: /docker/larastore/docker-compose.yml
+
+    - name: Tear down existing services
+      docker_compose:
+        project_src: /docker/larastore
+        state: absent
+
+    - name: Run `docker-compose up` again
+      docker_compose:
+        project_src: /docker/larastore
+        build: no
