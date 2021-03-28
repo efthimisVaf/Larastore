@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class,'welcome']);
 Route::get('/documentation', [PagesController::class,'documentation']);
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
 
 Route::get('/categories/list', [PagesController::class,'categoriesView']);
 Route::get('createCategoryView', [PagesController::class,'createCategory']);
