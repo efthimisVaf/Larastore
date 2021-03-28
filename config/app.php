@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://larastore.efthimis.xyz'),
+    'url' => 'https://larastore.efthimis.xyz',
 
     'asset_url' => env('ASSET_URL', null),
 
