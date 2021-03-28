@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="da67ebc1-cde1-471a-986f-e7e2d12ea7e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +259,7 @@
       <workItem from="1613607766263" duration="6280000" />
       <workItem from="1616894248153" duration="17000" />
       <workItem from="1616894266627" duration="80000" />
-      <workItem from="1616894365478" duration="11499000" />
+      <workItem from="1616894365478" duration="16305000" />
     </task>
     <servers />
   </component>
@@ -289,14 +287,15 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2144" y="188" width="992" height="737" key="SettingsEditor/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1613211001985" />
-    <state x="585" y="308" width="568" height="512" key="find.popup" timestamp="1613608997430">
-      <screen x="0" y="27" width="1680" height="1023" />
-    </state>
-    <state x="585" y="308" width="568" height="512" key="find.popup/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1613608997430" />
-    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1616907527915">
+    <state x="2349" y="297" width="650" height="541" key="find.popup" timestamp="1616914927980">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1616907527915" />
+    <state x="585" y="308" width="568" height="512" key="find.popup/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1613608997430" />
+    <state x="2349" y="297" width="650" height="541" key="find.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1616914927980" />
+    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1616914752977">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2303" y="259" width="672" height="678" key="search.everywhere.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1616914752977" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
