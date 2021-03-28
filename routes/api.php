@@ -18,7 +18,7 @@ use App\Http\Controllers\CategoryController;
 */
 
 Route::post('register', [AuthController::class, 'register']);
-Route::post('login', [AuthController::class, 'login']);
+//Route::post('login', [AuthController::class, 'login']);
 
 Route::get('products', [ProductController::class, 'index']);
 Route::get('products/{id}', [ProductController::class, 'show']);
